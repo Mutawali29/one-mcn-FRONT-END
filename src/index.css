@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px rgb(255, 255, 255); /* Ketebalan dan warna */
+    color: transparent;
+  }
+
+  .bg-main {
+    background-image: url('./assets/onemcnbg.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Keyframes for animating hover effects */
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+/* No longer needed, animations will be handled individually */
+.group:hover span,
+.group:not(:hover) span {
+  animation: none;
+}
